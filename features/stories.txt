@@ -1,0 +1,4 @@
+As a user I want to add a task so I can have tasks
+As a user I want to see my incomplete tasks so I can know what to do
+As a user I want to check tasks as complete so I won't do the same task twice
+
