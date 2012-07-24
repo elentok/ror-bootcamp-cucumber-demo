@@ -17,3 +17,11 @@ end
 Then /^the database has a task titled "(.*?)"$/ do |title|
   Task.find_by_title(title).should_not be_nil
 end
+
+Then /^the task list now has a task titled "(.*?)"$/ do |title|
+  find('#task-list').should have_content(title)
+end
+
+Then /^the "(.*?)" field is blank$/ do |field|
+  find_field(field).value.should be_empty
+end

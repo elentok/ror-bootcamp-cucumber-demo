@@ -8,6 +8,8 @@ $(document).ready ->
       data: { task: { title: taskTitle } }
       success: (task) ->
         $('#success').text('task added successfully').show()
+        $('<li>').text(task.title).appendTo('#task-list')
+        $('#task_title').val('')
       error: (response) ->
         data = JSON.parse(response.responseText)
         message = ""
