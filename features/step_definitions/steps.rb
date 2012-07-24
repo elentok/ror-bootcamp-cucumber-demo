@@ -25,3 +25,16 @@ end
 Then /^the "(.*?)" field is blank$/ do |field|
   find_field(field).value.should be_empty
 end
+
+Given /^the following tasks:$/ do |table|
+  table.hashes.each do |task|
+    Task.create!(title: task['title'])
+  end
+end
+
+Then /^I see the following tasks:$/ do |table|
+  actual = all('.task').map do |task_el|
+    { 'title' => task_el.find('.title').text }
+  end
+  actual.should == table.hashes
+end

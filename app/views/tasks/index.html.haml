@@ -8,4 +8,8 @@
 #success.hide.alert.alert-success
 #error.hide.alert.alert-error
 
+%h2 Tasks:
 %ul#task-list
+  - @tasks.each do |task|
+    %li.task
+      .title= task.title

@@ -3,7 +3,6 @@ Feature: Add task
   I want to add a task
   so I can have tasks
 
-  @wip
   Scenario: user adds a task
     Given the task list page
     When I fill in "Task Title:" with "my task"

@@ -7,6 +7,12 @@ describe TasksController do
       get 'index'
       response.should be_success
     end
+
+    it "assigns the tasks into @tasks" do
+      task = Task.create!(title: 'bla')
+      get 'index'
+      assigns(:tasks).should == [task]
+    end
   end
 
   describe "POST 'create'" do
